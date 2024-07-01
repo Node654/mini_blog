@@ -73,7 +73,7 @@
             </tr>
             <?php foreach ($blogs as $value) { ?>
                 <tr>
-                    <td><?= htmlspecialchars($value['title']) ?></td>
+                    <td><a href="/articles/<?= urlencode($value['id']) ?>"><?= htmlspecialchars($value['title']) ?></a></td>
                     <td><a href="/edit/<?= urlencode($value['id']) ?>">Edit</a></td>
                     <td>
                         <form action="/delete" method="post">
