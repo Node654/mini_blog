@@ -1,0 +1,16 @@
+{
+    "name": "nodest/mini_blog",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "nodest"
+        }
+    ],
+    "require": {
+        "larapack/dd": "^1.1"
+    }
+}

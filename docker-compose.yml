@@ -1,0 +1,38 @@
+version: '3.8'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: php-apache-laravel
+    container_name: mini_blog_app
+    restart: always
+    ports:
+      - "8075:80"
+    volumes:
+      - .:/var/www/html
+    depends_on:
+      - mysql_blog
+  mysql_blog:
+    image: mysql:latest
+    restart: always
+    container_name: mysql_blog
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mini_blog
+    ports:
+      - "3312:3306"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - mysql_blog_data:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    ports:
+      - "8076:80"
+    environment:
+      PMA_HOST: mysql_blog
+      PMA_ARBITRARY: 1
+volumes:
+  mysql_blog_data:
+    driver: local

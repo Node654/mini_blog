@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 10px; /* Добавлено padding */
+}
+
+header {
+    background: #50b3a2;
+    color: white;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav {
+    background: #32404b;
+    padding: 5px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 20px;
+}
+
+nav a:hover {
+    background: #50b3a2;
+}
+
+article {
+    margin-top: 20px;
+}
+
+footer {
+    background: #32404b;
+    color: white;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+
